@@ -5,3 +5,35 @@
     font-family: "Roboto","sans-serif"
 };
 
+a{
+    color: white;
+    text-decoration: none;
+}
+
+$bg : rgb(30, 30, 30);
+.header{
+    height: 100px;
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+    >img {
+        height: 100%;
+    }
+    >div{
+        border: 1px solid red;
+        width: 100%;
+        margin: 4vmax;
+        >a{
+            margin: 1vmax;
+        }
+    }
+    >svg{
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+   
+}
