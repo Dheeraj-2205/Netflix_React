@@ -1,0 +1,13 @@
+$bg : rgb(30, 30, 30);
+.header{
+    height: 100px;
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    
+    >img {
+        height: 70%;
+    }
+}
