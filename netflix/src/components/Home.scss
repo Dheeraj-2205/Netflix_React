@@ -3,9 +3,25 @@ $bg: rgb(16,16,16);
     height: 400px;
     background-color: $bg;
 }
+.row{
+    
+    padding: 1rem;
+    background-color: $bg;
+    >h2{
+        margin: 0.3rem;
+        font-weight: 400;
+    }
+    > div{
+        display: flex;
+        overflow-x: auto;
+    }
+
+}
 .card{
     width: 200px;
+    margin: 0.3rem;
     cursor: pointer;
+    transition: transform 0.5s;
     &:hover{
         transform: translateY(-10px) scale(1.05);
     }
