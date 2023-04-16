@@ -66,9 +66,13 @@ const Home = () => {
     // console.log(popular[0].poster_path);
   return (
     <section className='home'>
-        <div className='banner'>
-
-            <img src={`${imgUrl}/${upcomingMovie[0].poster_path}`} alt="" />
+        <div className='banner' style = {{
+            backgroundImage : upcomingMovie[0] ? `url(${`${imgUrl}/${upcomingMovie[0].poster_path}`})` : "rgb(16,16,16)"
+        }}>
+            {upcomingMovie[0] && <h1>{upcomingMovie[0].original_title}</h1>}
+            {upcomingMovie[0] && <p>{upcomingMovie[0].overview}</p>}
+            {/* <h1>{upcomingMovie[0].original_title}</h1> */}
+            {/* <p>{}</p> */}
         </div>
 
         <Row title = {"Upcoming Movie"} arr = {upcomingMovie}/>
