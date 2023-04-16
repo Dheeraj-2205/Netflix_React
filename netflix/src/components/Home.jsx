@@ -6,6 +6,7 @@ import axios from "axios";
 
 const apikey = "fc399f902305262547b5477e6a3138e2";
 const url = "https://api.themoviedb.org/3"
+const upcoming = "upcoming"
 const Card =   ({img}) =>(
 
      <img className = "card" src={img} alt="cover" />
@@ -19,8 +20,8 @@ const Row = ({title,arr = [{
             <h2>{title}</h2>
             <div>
                 {
-                    arr.map((ele)=>(
-                        <Card img = {ele.img}/>
+                    arr.map((ele,i)=>(
+                        <Card key = {i} img = {ele.img}/>
                     ))
                 }
             </div>
@@ -29,7 +30,11 @@ const Row = ({title,arr = [{
 }
 const Home = () => {
     useEffect(()=>{
-        
+        const fetchData = async()=>{
+            const data = await axios.get(`${url}/movie/${upcoming}?api_key=${apikey}`);
+            console.log(data);
+        }
+        fetchData();
     },[])
   return (
     <section className='home'>
