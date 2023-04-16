@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Home.scss";
 import axios from "axios";
 
@@ -6,14 +6,13 @@ import axios from "axios";
 
 const apikey = "fc399f902305262547b5477e6a3138e2";
 const url = "https://api.themoviedb.org/3"
-const upcoming = "upcoming"
+const upcoming = "upcoming";
+const imgUrl = "https://image.tmdb.org/t/p/original" 
 const Card =   ({img}) =>(
 
      <img className = "card" src={img} alt="cover" />
 )
-const Row = ({title,arr = [{
-    img :"https://cdn.marvel.com/content/2x/MLou2_Payoff_1-Sht_Online_DOM_v7_Sm.jpg"
-}] }) =>{
+const Row = ({ title,arr = [] }) =>{
     return(
 
         <div className="row">
@@ -21,7 +20,7 @@ const Row = ({title,arr = [{
             <div>
                 {
                     arr.map((ele,i)=>(
-                        <Card key = {i} img = {ele.img}/>
+                        <Card key = {i} img = {`${imgUrl}/${ele.poster_path}`}/>
                     ))
                 }
             </div>
@@ -29,10 +28,13 @@ const Row = ({title,arr = [{
     )
 }
 const Home = () => {
+    const [upcomingMovie,setUpcomingMovie] = useState([]);
     useEffect(()=>{
         const fetchData = async()=>{
-            const data = await axios.get(`${url}/movie/${upcoming}?api_key=${apikey}`);
-            console.log(data);
+            const {data : {results}} = await axios.get(`${url}/movie/${upcoming}?api_key=${apikey}`);
+            // console.log(results);
+            setUpcomingMovie(results);
+            console.log(upcomingMovie);
         }
         fetchData();
     },[])
@@ -40,7 +42,7 @@ const Home = () => {
     <section className='home'>
         <div className='banner'></div>
 
-        <Row title = {"Popular On Netflix"}/>
+        <Row title = {"Popular On Netflix"} arr = {upcomingMovie}/>
         <Row title = {"Popular On Netflix"}/>
         <Row title = {"Popular On Netflix"}/>
         <Row title = {"Popular On Netflix"}/>
