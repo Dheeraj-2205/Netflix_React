@@ -63,13 +63,15 @@ const Home = () => {
         fetchtop_rated();
         getAllGenre();
     },[])
+    // console.log(popular[0].poster_path);
   return (
     <section className='home'>
         <div className='banner'>
-            {/* <img src={`${imgUrl}/${upcomingMovie[0].poster_path}`} alt="" /> */}
+
+            <img src={`${imgUrl}/${upcomingMovie[0].poster_path}`} alt="" />
         </div>
 
-        <Row title = {"Popular On Netflix"} arr = {upcomingMovie}/>
+        <Row title = {"Upcoming Movie"} arr = {upcomingMovie}/>
         <Row title = {"Popular On Netflix"} arr = {play}/>
         <Row title = {"Popular"} arr = {popular}/>
         <Row title = {"Top Rated"} arr = {rated}/>
