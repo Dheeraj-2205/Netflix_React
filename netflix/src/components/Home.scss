@@ -2,7 +2,10 @@ $bg: rgb(16,16,16);
 .banner{
     height: 400px;
     background-color: $bg;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .row{
     
     padding: 1rem;
@@ -24,5 +27,23 @@ $bg: rgb(16,16,16);
     transition: transform 0.5s;
     &:hover{
         transform: translateY(-10px) scale(1.05);
+    }
+}
+.genreBox{
+    overflow-x: auto;
+    display: flex;
+    height: 100px;
+    background-color: $bg;
+    >a{
+        color: black;
+        background-color: white;
+        padding: 1rem 0;
+        margin: 1rem;
+        border-radius: 5px;
+        text-align: center;
+        min-width: 10rem;
+        &:hover{
+            background-color: #e2d7d7;
+        }
     }
 }

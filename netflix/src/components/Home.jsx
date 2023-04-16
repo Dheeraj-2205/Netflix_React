@@ -65,7 +65,9 @@ const Home = () => {
     },[])
   return (
     <section className='home'>
-        <div className='banner'></div>
+        <div className='banner'>
+            {/* <img src={`${imgUrl}/${upcomingMovie[0].poster_path}`} alt="" /> */}
+        </div>
 
         <Row title = {"Popular On Netflix"} arr = {upcomingMovie}/>
         <Row title = {"Popular On Netflix"} arr = {play}/>
