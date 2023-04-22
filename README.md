@@ -10,6 +10,6 @@ Api is not static they fetch the new data when new movies coming
 
 ![Screenshot 2](https://user-images.githubusercontent.com/107271486/232344766-c9adca45-98bd-4ecd-bd8c-3c24c13b7c0e.png)
 
-[Link of netfilx clone website](reactnetfilx.netlify.app)
+[Link of netfilx clone website](https://reactnetfilx.netlify.app)
 
 [Linkedin](https://www.linkedin.com/in/dheeraj-joshi-b07916231/)
